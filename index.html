@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bd366d3bdd.js" crossorigin="anonymous"></script>
+    <title>Notes Application</title>
+</head>
+
+
+
+<body class="min-h-screen w-full bg-linear-to-b from-white via-[#c2c4c2] to-[#8dc2f0] p-1">
+    <header class="flex justify-center md:justify-start items-center gap-2 p-1 ">
+        <figure class="w-7 h-auto">
+        <img src="post-it.png" alt="nots">
+        <figcaption class="sr-only">Notes</figcaption>
+    </figure>
+    <p class="font-bold text-2xl ">Simple Notes App</p>
+</header>
+
+<main class="flex flex-col justify-center items-center gap-5 mt-10">
+
+    <h1 class=" font-serif font-semibold text-xl md:text-2xl text-center">Create Your New Notes From Here</h1>
+    <figure class="w-15 md:w-20 h-auto">
+        <img src="arrow.png" alt="arrow">
+    </figure>
+
+    <section class="newNote w-full max-w-130">
+    <form action="" class="newNote__form min-w-fit max-w-full h-1/2 flex flex-col justify-center ">
+    <fieldset class="flex flex-col justify-center ml-5 mr-5 border h-fit rounded-2xl p-5 bg-transparent shadow-md gap-3">
+        <legend class="font-serif">&nbsp; <i class="fa-solid fa-quote-left"></i> Create The Note <i class="fa-solid fa-quote-right"></i> &nbsp;</legend>
+        <label for="title" class="font-serif">Title:</label>
+        <input type="text" placeholder="title" class="newNote__form__input border rounded p-1 pl-2">
+        <label class="font-serif" for="Notes">Note:</label>
+        <textarea name="Notes" id="Notes" cols="5" rows="5" placeholder="Text" class="newNote__form__textfield border p-1 pl-2 "></textarea>
+
+        <div class="flex justify-evenly items-center mt-3">
+            <button type="submit" class="newNote__form__buttonSubmit  text-sm rounded-md p-0.5 w-2/6 bg-black text-white">Add Note</button>
+            <button type="reset" class="newNote__form__buttonReset  text-sm rounded-md p-0.5 w-2/6 bg-black text-white">Cancel</button>
+        </div>
+    </fieldset>
+
+    
+    </form>
+    </section>
+
+    <section class="w-full  flex flex-col items-center gap-5 mt-10 mb-5 ">
+        <h2 class="text-center font-semibold text-2xl font-serif"><i class="fa-solid fa-angles-left text-xl"></i> Your Note List <i class="fa-solid fa-angles-right text-xl"></i></h2>
+        <input type="text" placeholder="Search" class="border p-1 rounded-xl w-full max-w-75 shadow">
+
+        <div class="cardContainer flex flex-col justify-center items-center md:flex-row md:justify-evenly md:items-start md:flex-wrap gap-5  w-full">
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="relative bottom-0 bg-white/80 flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start w-full h-auto p-1 mt-4">
+    <h2 class="text-center md:text-start">Simple Note Application</h2>
+    <p class="text-center md:text-start">&copy; Anas Abu Dayah</p>
+</footer>
+    
+        <script src="main.js" ></script>
+
+</body>
+</html>
