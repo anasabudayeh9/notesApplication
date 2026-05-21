@@ -61,7 +61,9 @@ function renderNotes(search = '') {
         const noteElement = document.createElement('div');
 
         noteElement.className =
-        ' bg-white/60 shadow-lg rounded-xl flex flex-col justify-center items-start gap-3 p-5 ml-1 mr-1 w-full max-w-70';
+        ' cards bg-white/60 shadow-lg rounded-xl flex flex-col justify-center items-start gap-3 p-5 ml-1 mr-1 w-full max-w-70';
+
+        noteElement.setAttribute('draggable', 'true');
 
         noteElement.innerHTML = `
             <label class="font-serif">Title:</label>
@@ -92,6 +94,57 @@ function renderNotes(search = '') {
             </div>
         `;
         cardContainer.appendChild(noteElement);
+
+
+        let cards = document.getElementsByClassName('cards');
+        const todo = document.querySelector('#todo');
+        const inprogress = document.querySelector('#inprogress');
+        const done = document.querySelector('#done');
+
+        for(card of cards){
+            card.addEventListener('dragstart', (e) => {
+                let selected = e.target;
+                todo.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                });
+
+                todo.addEventListener('drop', (e) => {
+                    todo.appendChild(selected);
+                    selected = null;
+                });
+                inprogress.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                });
+
+                inprogress.addEventListener('drop', (e) => {
+                    inprogress.appendChild(selected);
+                    selected = null;
+                });
+                done.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                });
+
+                done.addEventListener('drop', (e) => {
+                    done.appendChild(selected);
+                    selected = null;
+                });
+                cardContainer.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                });
+
+                cardContainer.addEventListener('drop', (e) => {
+                    cardContainer.appendChild(selected);
+                    selected = null;
+                });
+
+
+            });
+
+        }
+        
+        
+
+
 
     });
 }
